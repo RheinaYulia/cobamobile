@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController pass = TextEditingController();
 
   Future LoginPage() async {
-    var url = "http:// 192.168.228.81/mobile_kuis/login.php";
+    var url = "http://192.168.228.81/mobile_kuis/login.php";
     var response = await http.post(Uri.parse(url), body: {
       "username": user.text,
       "password": pass.text,
@@ -40,6 +40,8 @@ class _LoginPageState extends State<LoginPage> {
           backgroundColor: Colors.red,
           textColor: Colors.white,
           fontSize: 16.0);
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainMenu()));
     } else {
       Fluttertoast.showToast(
           msg: "Username & Password Incorrect!",
@@ -126,10 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   onPressed: () {
                                     //After successful login we will redirect to profile page. Let's create profile page now
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => MainMenu()));
+                                    LoginPage();
                                   },
                                 ),
                               ),

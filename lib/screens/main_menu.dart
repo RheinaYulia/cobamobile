@@ -3,7 +3,6 @@ import 'package:cobamobile/ui/shared/color.dart';
 import 'package:flutter/material.dart';
 
 class MainMenu extends StatefulWidget {
-  const MainMenu({Key? key}) : super(key: key);
 
   @override
   State<MainMenu> createState() => _MainMenuState();

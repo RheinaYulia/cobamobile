@@ -29,7 +29,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   TextEditingController pass = TextEditingController();
 
   Future register() async {
-    var url = "http:// 192.168.228.81/mobile_kuis/register.php";
+    var url = "http://192.168.228.81/mobile_kuis/register.php";
     var response = await http.post(Uri.parse(url), body: {
       "username": user.text,
       "password": pass.text,
@@ -53,6 +53,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
           backgroundColor: Colors.red,
           textColor: Colors.white,
           fontSize: 16.0);
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainMenu()));
     }
   }
 
@@ -207,7 +209,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               //           builder: (context) => ProfilePage()),
                               //       (Route<dynamic> route) => false);
                               // }
-                              MainMenu();
+                              register();
                             },
                           ),
                         ),

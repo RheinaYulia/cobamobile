@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cobamobile/screens/main_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cobamobile/common/theme_helper.dart';
@@ -206,7 +207,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               //           builder: (context) => ProfilePage()),
                               //       (Route<dynamic> route) => false);
                               // }
-                              register();
+                              MainMenu();
                             },
                           ),
                         ),
